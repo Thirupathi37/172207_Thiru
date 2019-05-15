@@ -1,0 +1,94 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<body>
+    <div class="header">
+        <div style="text-align:center">
+          
+            <div class="header-left">
+                <div class="container">
+                    <div class="header-right">
+                        <a *ngIf="readValue('Role')!='nothing'" class="nav-link" style="margin:5px;" role="button"><h3><b class="text-info"> Welcome </b><b class="text-white">{{readValue('Email')}}</b></h3></a>
+                      </div>
+                    <div class="spinner-grow text-danger"> </div>
+                      <img src="https://www.dhulaii.com/assets/img/freeze/logo.png" width="215" height="50"/>
+                      <div class="spinner-grow text-danger"> </div>
+                  </div>
+                  
+            </div>
+          <h1>
+              <!-- <div class="spinner-border text-success"></div> -->
+             WELCOME TO CARWASH
+             <!-- <div class="spinner-border text-success"></div> -->
+            </h1>
+           
+         
+          </div>
+          
+
+         
+
+        <div class="header-left">
+          <a href="#home">Home</a>
+          <!-- <a href="#contact">Contact</a> -->
+          <a [routerLink]="['/about']">About</a>
+          <a [routerLink]="['/contact']">contact</a>
+          <a *ngIf="readValue('Role')=='nothing'" [routerLink]="['/register']">Register</a>
+          <a *ngIf="readValue('Role')=='nothing'" [routerLink]="['/login']">Login</a>
+          <a *ngIf="readValue('Role')!='nothing'" (click)="logout()" class="btn btn-primary">Logout</a>
+          
+         
+         
+          <!-- <a [routerLink]="['/addVehicle']" >AddVehicle</a>
+          <a [routerLink]="['/membership']">MemberShip</a>
+          <a routerLink="profiles" class="btn btn-outline-success" role="button" routerLinkActive="active">Details</a> -->
+         
+        </div>
+        <div class="header-right">
+         
+          <!-- <a [routerLink]="['/payment']">Payment</a>
+          <a [routerLink]="['/bookservice']">Book</a> -->
+          <a [routerLink]="['/membership']">member</a>
+          <a *ngIf="readValue('Role')=='nothing'" [routerLink]="['/supervisor']">SuperVisor</a>
+          <a *ngIf="readValue('Role')!='nothing'" (click)="logout()" class="btn btn-primary">Logout</a>
+          <a [routerLink]="['/gallery']">Gallery</a>
+          <a [routerLink]="['/myaccount']">MyAccount</a>
+         
+        </div>
+      </div>
+      
+     
+        
+      <carousel>
+          <slide>
+            <img src="http://washandspa.com/wp-content/themes/washandspa/images/Banner2.jpg" alt="first slide" style="display: block;height: 20%;width: 100%;">
+          </slide>
+          <slide>
+            <img src="https://i.ytimg.com/vi/6fiPuQIZgNY/maxresdefault.jpg" alt="second slide" style="display: block; height:10%; width: 100%">
+          </slide>
+          <slide>
+            <img src="https://cnet2.cbsistatic.com/img/BwFFFit0KfHKLABAXLcE0tR4VEI=/1600x900/2018/02/13/756b6e01-bb88-4020-a5ad-8d7f0b5b133e/img-0175.jpg" alt="third slide" style="display: block;height:20%;width: 100%;">
+          </slide>
+          <slide>
+              <img src="https://www.luxewash.com.au/wp-content/uploads/banner-2-1024x405.jpg" alt="third slide" style="display: block;height:20%;width: 100%;">
+            </slide>
+            <slide>
+                <img src="https://www.goroo.com.au/wp-content/uploads/2016/11/car-interior-detailing.jpg" alt="third slide" style="display: block;height:20%;width: 100%;">
+              </slide>
+              <slide>
+                  <img src="http://www.igladsolutions.com/images/NSSB-A38010-Car-Wash-3x8.jpg" alt="third slide" style="display: block;height:20%;width: 100%;">
+                </slide>
+                <slide>
+                  <img src="https://media.treehugger.com/assets/images/2011/10/winshieldcarwash.jpg" alt="third slide" style="display: block;height:20%;width: 100%;">
+                </slide>
+        </carousel>
+        
+<router-outlet></router-outlet>
+<footer id="footer">
+    <div class="container">
+      <div class="copyright" style="text-align: center">
+        © Copyright
+        CarWash.All Rights Reserved
+      </div>
+    </div>
+  </footer>
+  

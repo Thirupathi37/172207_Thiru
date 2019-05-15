@@ -1,0 +1,41 @@
+<div class="backgroundcolor" style="text-align:center">
+    <h3>
+     Welcome To MemberShip Portal
+   </h3>
+   <div  class="form-group row">
+   <form [hidden]="!submitted" [formGroup]="memForm" novalidate (ngSubmit)="onMemberShip()">
+  
+      <div class="form-group">
+          <label for="membership">Select Your memberShip</label>
+          <select class="form-control" id="membership" formControlName="membership"  [(ngModel)]="member.membership">
+            <option>Gold</option>
+            <option>Silver</option>
+            <option>Premium</option>
+            
+          </select>
+        </div>
+  
+ 
+ 
+   
+  <!-- REGISTER BUTTON -->
+       <button class="btn btn-primary" [disabled]="regForm.valid" type="submit">Submit</button>
+  
+  
+  
+   </form>
+
+
+
+  </div>
+  
+   </div>
+
+  <!-- <form [hidden]="submitted">
+<div>
+    {{data}}
+</div>
+  </form>  -->
+      
+  
+  

@@ -1,0 +1,117 @@
+<div class="backgroundcolor" style="text-align:center">
+  <h3>
+   Welcome To Login
+ </h3>
+ <div  class="form-group row">
+ <form [hidden]="submitted" [formGroup]="regForm" novalidate (ngSubmit)="onLogin()">
+
+   <!-- USERNAME FIELD	
+   <div class="form-group">
+         <label class="center-block">
+           User Name <input type="text" class="form-control" class="col-xs-3" formControlName="name" value="rishi12"   [(ngModel)]="loginAccount.name">
+         </label>
+       </div>
+     <div *ngIf="regForm.controls['name'].invalid && (regForm.controls['name'].dirty || regForm.controls['name'].touched)" class="alert alert-danger">
+         <div *ngIf="regForm.controls['name'].errors.required">
+               <b>  Username is required.</b>
+         </div>
+         
+        <div *ngIf="regForm.controls['name'].errors.maxlength">
+               Maximum characters required for username is 20
+       </div>
+
+         <div *ngIf="regForm.controls['name'].errors.minlength">
+         Minimum characters required for username is 3
+         </div>
+     </div> -->
+
+<!-- EMAIL FIELD -->
+     <div class="form-group">
+       <label class="center-block">
+        Email <input type="email" class="form-control" formControlName="email" value="rishi@gmail.com" [(ngModel)]="loginAccount.email">
+       </label>
+     </div>
+     
+     <div *ngIf="regForm.controls['email'].invalid && (regForm.controls['email'].dirty || regForm.controls['email'].touched)" class="alert alert-danger">
+           <div *ngIf="regForm.controls['email'].errors.required">
+             Email is required.
+           </div>
+           <div *ngIf="regForm.controls['email'].errors.pattern">
+             <!-- [(a-z),(A-Z),(0-9)@gmail.com] -->
+             Email id pattern should be like this [*@gmail.com]
+           </div>
+     </div>
+<!-- PASSWORD FIELD -->
+<div class="form-group">
+  <label class="left-block">
+    Password<input type="password" class="form-control" formControlName="password"  value="1245" [(ngModel)]="loginAccount.password">
+  </label>
+  </div>
+  <div *ngIf="regForm.controls['password'].invalid && (regForm.controls['password'].dirty || regForm.controls['password'].touched)" class="alert alert-danger">
+    <div *ngIf="regForm.controls['password'].errors.required">
+    Password  is required.
+  </div>
+  <div *ngIf="regForm.controls['password'].errors.maxlength">
+    Maximum characters for password is 15
+    </div>
+    <div *ngIf="regForm.controls['password'].errors.minlength">
+    Minimum characters for password is 6
+    </div>
+    <div *ngIf="regForm.controls['password'].errors.pattern">
+    Password should comprised of atleast one lowercase, uppercase and number
+    </div>
+  </div>
+<!-- PHONE FIELD -->
+     <!-- <div class="form-group">
+     <label class="center-block">Phone Number
+       <input type="number"  class="form-control" formControlName="phonenumber" value="798088790" [(ngModel)]="loginAccount.phonenumber">
+     </label>
+     </div>
+     <div *ngIf="regForm.controls['phonenumber'].invalid && (regForm.controls['phonenumber'].dirty || regForm.controls['phonenumber'].touched)" class="alert alert-danger">
+       <div *ngIf="regForm.controls['phonenumber'].errors.required">
+       Phone Number  is required.
+     </div>
+     <div *ngIf="regForm.controls['phonenumber'].errors.pattern">
+       Phone number should start with 9/8/7/6 and of 10 digits
+       </div>
+     </div> -->
+
+
+
+
+ 
+<!-- REGISTER BUTTON -->
+     <button class="btn btn-primary" [disabled]="!regForm.valid" type="submit">Login</button>
+
+ </form>
+</div>
+ </div>
+
+ 
+ <div [hidden]=!submitted>
+  <div *ngIf="response">
+    
+  <h1>ur credentails is correct</h1>
+ 
+  <nav>
+    <a [routerLink]="['/addVehicle']">Addvehicle</a>
+  </nav>
+  </div>
+  <div *ngIf="!response">
+      
+    <h1>ur credentails is incorrect..pls Login again</h1>
+    <nav>
+        <a [routerLink]="['/login']">Login</a>
+    </nav>
+    </div>
+    
+  
+  </div>
+  <!-- <div [hidden]="!submitted">
+    <h4>You submitted successfully!</h4>
+    
+  </div> -->
+
+  
+   
+

@@ -1,0 +1,72 @@
+
+  <div class="container">
+    <h1>Add vehicle</h1>
+ <!--    vehiclenumber:string
+brand:string
+vehicleModel:string -->
+<div  style="width: 300px;">
+  <form  [hidden]="submitted" (ngSubmit)="save()" [formGroup]="vehicleForm">
+    
+                <div class="form-group">
+                  <label for="vehiclenumber">vehicle number</label>
+                  <input type="text" class="form-control" id="vehiclenumber" formControlName="vehiclenumber" required [(ngModel)]="addvpojo.vehiclenumber" name="vehiclenumber" >
+                </div>
+
+                  <div *ngIf="vehicleForm.controls['vehiclenumber'].invalid && (vehicleForm.controls['vehiclenumber'].dirty || vehicleForm.controls['vehiclenumber'].touched)" class="alert alert-danger">
+                        <div *ngIf="vehicleForm.controls['vehiclenumber'].errors.required">
+                          Vehicle number is required.
+                        </div>
+                  </div>
+
+
+
+
+                  <div class="form-group">
+                    <label for="brand">brand</label>
+                    <input type="text" class="form-control" id="brand" formControlName="brand" required [(ngModel)]="addvpojo.brand" name="brand">
+                  </div>
+
+                  <div *ngIf="vehicleForm.controls['brand'].invalid && (vehicleForm.controls['brand'].dirty || vehicleForm.controls['brand'].touched)" class="alert alert-danger">
+                    <div *ngIf="vehicleForm.controls['brand'].errors.required">
+                      brand name is required.
+                    </div>
+  
+                  </div>
+
+
+
+                  <div class="form-group">
+                    <label for="vehicleModel">vehicleModel</label>
+                    <input type="text" class="form-control" id="vehicleModel" formControlName="vehicleModel" required [(ngModel)]="addvpojo.vehicleModel" name="vehicleModel">
+                  </div>
+
+                  <div *ngIf="vehicleForm.controls['vehicleModel'].invalid && (vehicleForm.controls['vehicleModel'].dirty || vehicleForm.controls['vehicleModel'].touched)" class="alert alert-danger">
+                    <div *ngIf="vehicleForm.controls['vehicleModel'].errors.required">
+                      vehicleModel name is required.
+                    </div>              
+                  </div>
+
+<button type="submit" class="btn btn-success" [disabled]="!vehicleForm.valid">Submit</button>
+  </form>
+</div>
+  </div>
+<div [hidden]="!submitted"></div>
+
+
+
+<!-- <div [hidden]=!submitted>
+  <div *ngIf="response">
+     {{response}} 
+  <h1>ur credentails is correct</h1>
+  <nav>
+      <a [routerLink]="['/addVehicle']">Addvehicle</a>
+  </nav>
+  </div>
+  <div *ngIf="!response">
+       {{response}} 
+    <h1>ur credentails is incorrect</h1>
+    <nav>
+        <a [routerLink]="['/register']">Register</a>
+    </nav>
+    </div> -->
+    

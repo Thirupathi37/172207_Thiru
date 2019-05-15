@@ -1,0 +1,76 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  
+  <body>
+    <form [hidden]="!submitted" [formGroup]="payForm" novalidate (ngSubmit)="onPayment()">
+    <div class="row">
+      <div class="col-75">
+        <div class="container">
+         
+          
+            <div class="row">
+              <div class="col-50">
+                <h3>Billing Address</h3>
+              </div>
+            </div>
+    
+              <div class="col-50">
+                <h3>Payment</h3>
+                <label for="fname">Accepted Cards</label>
+                <div class="icon-container">
+                  <i class="fa fa-cc-visa" style="color:navy;"></i>
+                  <i class="fa fa-cc-amex" style="color:blue;"></i>
+                  <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                  <i class="fa fa-cc-discover" style="color:orange;"></i>
+                </div>
+                <!-- nameoncard:string
+     creditcardnumber:string
+     expmonth:string
+     expyear:string
+     cvv:string -->
+  
+                <label for="nameoncard">Name on Card</label>
+                <input type="text" id="nameoncard" name="nameoncard"  formControlName="nameoncard" [(ngModel)]="paypojo.nameoncard">
+  
+                <label for="ccnum">Credit card number</label>
+                <input type="text" id="ccnum" name="cardnumber" formControlName="creditcardnumber" [(ngModel)]="paypojo.creditcardnumber" >
+  
+                <label for="expmonth">Exp Month</label>
+                <input type="text" id="expmonth" name="expmonth" formControlName="expmonth" [(ngModel)]="paypojo.expmonth" >
+  
+                <div class="row">
+                  <div class="col-50">
+                    <label for="expyear">Exp Year</label>
+                    <input type="text" name="expyear" formControlName="expyear" [(ngModel)]="paypojo.expyear" >
+                  </div>
+               
+  
+  
+                  <div class="col-50">
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" name="cvv" formControlName="cvv" [(ngModel)]="paypojo.cvv" > 
+                  </div>
+                </div>
+            
+              
+            </div>
+            <label>
+              <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+            </label>
+          </div> </div> </div>
+          <div class="col-25">
+              <button class="btn btn-primary" [disabled]="!payForm.valid" type="submit">Submit</button>
+             
+          </div>
+            </form>
+  <div *ngIf=check>
+    <h3> Payment successful!!!</h3>
+  </div>
+       
+   
+   
+    </body>
+    
+    

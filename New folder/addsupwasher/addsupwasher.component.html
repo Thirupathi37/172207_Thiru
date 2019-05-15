@@ -1,0 +1,101 @@
+<div class="backgroundcolor" style="text-align:center">
+    <h3>
+     Welcome To Register
+   </h3>
+   <div  class="form-group row">
+   <form [hidden]="submitted" [formGroup]="regForm" novalidate (ngSubmit)="onAdd()">
+  
+     <!-- USERNAME FIELD -->	
+     <div class="form-group">
+           <label class="center-block">
+             Enter Supervisor Name <input type="text" class="form-control" class="col-xs-3" formControlName="supervisorName"  [(ngModel)]="addwasher.supervisorName">
+           </label>
+         </div>
+       <div *ngIf="regForm.controls['name'].invalid && (regForm.controls['name'].dirty || regForm.controls['name'].touched)" class="alert alert-danger">
+           <div *ngIf="regForm.controls['name'].errors.required">
+                 <b>  Username is required.</b>
+           </div>
+           
+          <div *ngIf="regForm.controls['name'].errors.maxlength">
+                 Maximum characters required for username is 20
+         </div>
+  
+           <div *ngIf="regForm.controls['name'].errors.minlength">
+           Minimum characters required for username is 3
+           </div>
+       </div>
+  
+ <!-- USERNAME FIELD -->	
+ <div class="form-group">
+    <label class="center-block">
+      Enter Washer Name <input type="text" class="form-control" class="col-xs-3" formControlName="washerName"  [(ngModel)]="addwasher.washerName">
+    </label>
+  </div>
+<div *ngIf="regForm.controls['name'].invalid && (regForm.controls['name'].dirty || regForm.controls['name'].touched)" class="alert alert-danger">
+    <div *ngIf="regForm.controls['name'].errors.required">
+          <b>  Username is required.</b>
+    </div>
+    
+   <div *ngIf="regForm.controls['name'].errors.maxlength">
+          Maximum characters required for username is 20
+  </div>
+
+    <div *ngIf="regForm.controls['name'].errors.minlength">
+    Minimum characters required for username is 3
+    </div>
+</div>
+
+
+  <!-- PASSWORD FIELD -->
+  <!-- <div class="form-group">
+    <label class="left-block">
+      Password<input type="password" class="form-control" formControlName="password" value="1245" [(ngModel)]="register.password">
+    </label>
+    </div>
+    <div *ngIf="regForm.controls['password'].invalid && (regForm.controls['password'].dirty || regForm.controls['password'].touched)" class="alert alert-danger">
+      <div *ngIf="regForm.controls['password'].errors.required">
+      Password  is required.
+    </div>
+    <div *ngIf="regForm.controls['password'].errors.maxlength">
+      Maximum characters for password is 15
+      </div>
+      <div *ngIf="regForm.controls['password'].errors.minlength">
+      Minimum characters for password is 6
+      </div>
+      <div *ngIf="regForm.controls['password'].errors.pattern">
+      Password should comprised of atleast one lowercase, uppercase and number
+      </div>
+    </div> -->
+  <!-- PHONE FIELD -->
+       <!-- <div class="form-group">       <label class="center-block">Phone Number
+         <input type="number"  class="form-control" formControlName="phonenumber" value="798088790" [(ngModel)]="register.phonenumber">
+       </label>
+       </div>
+       <div *ngIf="regForm.controls['phonenumber'].invalid && (regForm.controls['phonenumber'].dirty || regForm.controls['phonenumber'].touched)" class="alert alert-danger">
+         <div *ngIf="regForm.controls['phonenumber'].errors.required">
+         Phone Number  is required.
+       </div>
+       <div *ngIf="regForm.controls['phonenumber'].errors.pattern">
+         Phone number should start with 9/8/7/6 and of 10 digits
+         </div>
+       </div>
+  
+   -->
+  
+  
+   
+  <!-- REGISTER BUTTON -->
+       <button class="btn btn-primary" [disabled]="!regForm.valid" type="submit">ADD</button>
+  
+  
+  
+   </form>
+  </div>
+   </div>
+  
+  <div [hidden]="!submitted">
+    
+    
+   </div>  
+  
+  

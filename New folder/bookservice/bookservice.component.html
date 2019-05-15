@@ -1,0 +1,48 @@
+
+  <div class="container-fluid">
+    <h1>Book washservice</h1>
+      <div [hidden]="submitted" style="width: 300px;">
+        <form  [hidden]="submitted" (ngSubmit)="onAdd()" [formGroup]="bookForm">
+          
+          <!-- <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" class="form-control" id="location" formControlName="location" required [(ngModel)]="bookpojo.location" name="location" >
+          </div>
+
+          <div *ngIf="bookForm.controls['location'].invalid && (bookForm.controls['location'].dirty || bookForm.controls['location'].touched)" class="alert alert-danger">
+            <div *ngIf="bookForm.controls['location'].errors.required">
+              location is required.
+            </div>         
+          </div> -->
+
+          
+      <div class="form-group">
+        <label for="location">Select Your City</label>
+        <select class="form-control" id="location" formControlName="location"  [(ngModel)]="bookpojo.location">
+          <option>Bengaloore</option>
+          <option>Hyderabad</option>
+          <option>Mumbai</option>
+          <option>Delhi</option>
+          <option>Kolkata</option>
+          
+        </select>
+      </div><br>
+      
+          <div class="form-group">
+            <label for="date">Date and Time</label>
+              <input type="datetime-local" class="form-control" id="date" formControlName="date" required [(ngModel)]="bookpojo.date" name="date">
+          </div>
+
+          <div *ngIf="bookForm.controls['date'].invalid && (bookForm.controls['date'].dirty || bookForm.controls['date'].touched)" class="alert alert-danger">
+            <div *ngIf="bookForm.controls['date'].errors.required">
+              date & time is required.
+            </div>  
+          </div>
+
+          <button  type="submit" class="btn btn-success" [disabled]="!bookForm.valid">Submit</button>
+        </form>
+      
+          <!-- <div [hidden]="!submitted"></div>
+          </div> -->
+      </div>    
+  </div>

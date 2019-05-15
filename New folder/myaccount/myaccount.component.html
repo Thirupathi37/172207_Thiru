@@ -1,0 +1,49 @@
+<div *ngFor = "let res2 of registerresult" >
+    <div *ngIf="res2.email==read()">
+      <h4>Your Account Details Are:</h4>
+      <label><b>Name:</b></label>{{res2.name}}<br>
+    <label><b>email:</b></label>{{res2.email}}<br>
+    <label><b>phonenumber:</b></label>{{res2.phonenumber}}<br>
+    <label><b>password:</b></label>{{res2.password}}
+  </div>
+  </div><br><br>
+  
+
+
+
+<h4>Your Previous Booking Details Are:</h4>
+<div *ngFor = "let res of result" >
+  <div *ngIf="res.email==read()">
+  
+  <label><b>Location:</b></label>{{res.location}}<br>
+  <label><b>Date:</b></label>{{res.date}}
+</div><br>
+</div><br><br>
+
+
+<!-- <div *ngFor = "let res1 of loginresult" >
+  <div *ngIf="res1.email==read()">
+    <h4>Your Account Details Are:</h4>
+  <label><b>email:</b></label>{{res1.email}}<br>
+  <label><b>password:</b></label>{{res1.password}}
+</div>
+</div><br><br> -->
+
+
+<h4>Your Previous Vehicle Details Are:</h4>
+<div *ngFor = "let res3 of vehicleresult" >
+  <div *ngIf="res3.email==read()">
+    
+    <label><b>VehicleNumber:</b></label>{{res3.vehiclenumber}}<br>
+  <label><b>Brand:</b></label>{{res3.brand}}<br>
+  <label><b>VehicleModel:</b></label>{{res3.vehicleModel}}<br>
+</div><br>
+</div>    
+
+
+<h4>Your Membership Details Are:</h4>
+<div *ngFor = "let mem of membershipresult" >
+  <div *ngIf="mem.email==read()">
+  <label><b>Your Membership is:</b></label>{{Membership}}<br>
+</div><br>
+</div>    

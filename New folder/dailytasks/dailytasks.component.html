@@ -1,0 +1,60 @@
+
+  <div class="container">
+      <div [hidden]="submitted"  style="width: 300px;">
+        <form [formGroup]="logForm" novalidate (click)="onService()"> <br><br>
+           <button class="button button2"  [disabled]="!logForm.valid" type="submit">Get All BookServices</button>
+        </form>
+  </div> <br><br>
+  </div>
+
+  <div class="container">
+      <div [hidden]="submitted"  style="width: 300px;">
+    
+        <form [formGroup]="logForm" novalidate (click)="onRegister()">
+            <a [routerLink]="['/addsupwasher']"><button  class="button"   [disabled]="!logForm.valid" type="submit">Add</button></a>
+          <!-- <button class="btn btn-primary" [disabled]="!logForm.valid" type="submit">View all vehicles</button> -->
+        </form>
+      </div>
+    </div>
+
+<!-- <div>      <button class="button"   [disabled]="!logForm.valid" type="submit">Add</button><br><br>
+<button class="button button2"  [disabled]="!logForm.valid" type="submit">View</button>
+</div> -->
+
+      <!-- <div [hidden]=!submitted>
+        <div *ngIf="response">
+          <h4>your credentials are correct</h4>
+            <nav>
+                <a [routerLink]="['/addvehicle']"><h3>Add your Vehicle for Service</h3></a>
+            </nav>
+        </div>
+        <div *ngIf="!response">
+          <h1>your credentails are incorrect</h1>
+            <nav>
+                <a [routerLink]="['/register']">Register</a>
+            </nav>
+          </div>
+      </div> -->
+   
+  
+  
+  <div class="container"
+  *ngFor="let results of results">
+  <table><h4><tr><td>LOCATION : {{results.location}}</td></h4>
+  <h4><tr><td>DATE :{{results.date}}</td></tr></h4><br>
+    </table>
+  </div>
+  
+  
+  <!-- <div class="container"
+  *ngFor="let results1 of results1">
+  <table><h4><tr><td>LOCATION : {{results1.vehiclenumber}}</td></h4>
+  <h4><tr><td>DATE :{{results1.brand}}</td></tr></h4>
+  
+    </table>
+  </div> -->
+  <!-- <div class="card card-block"
+       *ngFor="let joke of jokes">
+    <h4 class="card-title">{{joke.setup}}</h4>
+    <p class="card-text">{{joke.punchline}}</p>
+  </div> -->
