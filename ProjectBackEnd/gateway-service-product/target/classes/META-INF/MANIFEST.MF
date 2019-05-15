@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: gateway-service-product
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: tbommish
+Implementation-Vendor-Id: com.carwash.booking
+Build-Jdk: 1.8.0_141
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/gateway-service-product
+Created-By: Maven Integration for Eclipse
+
